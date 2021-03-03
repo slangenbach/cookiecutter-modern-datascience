@@ -1,0 +1,14 @@
+name: dev
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - ipykernel
+  - seaborn
+  - pandas
+  - numpy
+  - scikit-learn
+  - black
+  - scipy
+  - pytest
+  - isort
