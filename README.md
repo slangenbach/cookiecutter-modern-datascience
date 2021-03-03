@@ -44,7 +44,7 @@ code .  # Replace code with your favourite editor
 
 ## Directory structure
 ```
-├── data                
+├── data
 │   ├── 0_external      <- Data from third party sources
 │   ├── 1_raw           <- The original, immutable data dump
 │   ├── 2_interim       <- Intermediate data that has been transformed in any way

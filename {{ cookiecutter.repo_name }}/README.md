@@ -3,7 +3,7 @@
 {{ cookiecutter.description }}
 
 ## Prerequisites
-What is required to use this repository?  May include specific tooling, access to 
+What is required to use this repository?  May include specific tooling, access to
 certain resources, e.g. specific S3 buckets, or
 
 ## Usage
