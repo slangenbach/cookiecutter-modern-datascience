@@ -72,8 +72,8 @@ def test_folders(project_dir):
 
 
 def no_curlies(filepath: Path):
-    """ Utility to make sure no curly braces appear in a file.
-        That is, was jinja able to render everthing? """
+    """Utility to make sure no curly braces appear in a file.
+    That is, was jinja able to render everthing?"""
     template_strings = ["{{", "}}", "{%", "%}"]
 
     if any([s in filepath.name for s in template_strings]):
