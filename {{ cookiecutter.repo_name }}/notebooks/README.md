@@ -1,8 +1,7 @@
 # {{ cookiecutter.project_name }} - Notebooks
+Put all Jupyter notebooks here. The naming convention is:
+* A zero padded number for ordering
+* A short `_` delimited description
 
-Here you can find all the notebooks. The naming convention is:
-* A number (for ordering),
-* The creator's initials, and
-* A short `_` delimited description, e.g:
-
-        01_cp_exploratory_data_analysis.ipynb
+## Example
+* 01_exploratory_data_analysis.ipynb
