@@ -1,3 +1,2 @@
 # {{ cookiecutter.project_name }} - External Data
-
-Here you can find data from third party sources.
+Put data from third party sources here.
