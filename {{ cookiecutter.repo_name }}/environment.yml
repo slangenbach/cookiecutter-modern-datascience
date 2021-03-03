@@ -13,3 +13,4 @@ dependencies:
   - pytest
   - isort
   - metaflow
+  - wandb
