@@ -1,4 +1,3 @@
-name: dev
 channels:
   - defaults
   - conda-forge
@@ -14,3 +13,5 @@ dependencies:
   - isort
   - metaflow
   - wandb
+  - git-lfs
+  - pre-commit
