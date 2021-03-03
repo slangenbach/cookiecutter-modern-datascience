@@ -1,117 +1,92 @@
 # Cookiecutter Modern Data Science
-[Cookiecutter] template for starting a Data Science project with modern, fast Python tools.
+[Cookiecutter] template to create a data science project with modern, fast Python tools. This is a fork of the [modern data science template](https://github.com/crmne/cookiecutter-modern-datascience) orginally created by [Carmine Paolino](https://github.com/crmne) which is tailored to my workflow.
 
 ## Features
+* [conda] to manage packages and environments in a platform agnostic way
+* [Git LFS] to manage large files with git
+* [Metaflow] to create elegant data pipelines and workflows
+* [Weights and Biases] to track experiments
+* Batteries included: [pandas], [numpy], [scipy], [scikit-learn], [seaborn], and [ipykernel] (required to work with [Jupyter Notebooks in VSCode](https://code.visualstudio.com/docs/python/jupyter-support)) already installed.
+* Consistent code quality: [black], [isort], and [pylint] already installed.
+* [Pytest] to write test.
+* [GitHub Pages] to create a dedicated website for your project
 
-* [Pipenv] for managing packages and virtualenvs in a modern way.
-* [Prefect] for modern pipelines and data workflow.
-* [Weights and Biases] for experiment tracking.
-* [FastAPI] for self-documenting fast HTTP APIs - on par with NodeJS and Go - based on [asyncio], [ASGI], and [uvicorn].
-* Modern CLI with [Typer].
-* Batteries included: [Pandas], [numpy], [scipy], [seaborn], and [jupyterlab] already installed.
-* Consistent code quality: [black], [isort], [autoflake], and [pylint] already installed.
-* [Pytest] for testing.
-* [GitHub Pages] for the public website.
+## Prerequisites
+* [miniconda] >= 4.9.2
+* *Optional*: [VSCode](https://code.visualstudio.com/) >= 1.53.2
 
-## Quickstart
-
-Install the latest Cookiecutter and Pipenv:
-
-    pip install -U pipenv cookiecutter
+## Usage
+Install the latest version of cookiecutter:
+```bash
+conda install -c conda-forge cookiecutter
+```
 
 Generate the project:
+```bash
+cookiecutter gh:sl/cookiecutter-modern-datascience
+```
 
-    cookiecutter gh:crmne/cookiecutter-modern-datascience
+Activate the conda environment:
+```bash
+cd <repo_name>
+conda activate dev  # activates dedicated conda env
+```
 
-Get inside the project:
-
-    cd <repo_name>
-    pipenv shell  # activates virtualenv
-
-(Optional) Start Weights & Biases locally, if you don't want to use the cloud/on-premise version:
-
-    wandb local
+*Optional*: Start [Weights and Biases] locally, if you don't want to use the cloud/on-premise version:
+```bash
+wandb local
+```
 
 Start working:
-
-    jupyter-lab
+```bash
+code .  # Replace code with your favourite editor
+```
 
 ## Directory structure
+```
+├── data                
+│   ├── 0_external      <- Data from third party sources
+│   ├── 1_raw           <- The original, immutable data dump
+│   ├── 2_interim       <- Intermediate data that has been transformed in any way
+│   └── 3_processed     <- Final, canoncial data for modeling
+|
+├── docs                <- Github pages website
+|
+├── flows               <- Data pipelines expressed as Metaflow flows
+|
+├── models              <- Serialized features, trained models, model predictions and summaries
+|
+├── notebooks           <- Jupyter notebooks
+|
+├── references          <- Documentation of raw/external data sources and all other explanatory materials
+|
+├── reports             <- Reports generated from analysis
+│   ├── figures         <- Figures used in reports
+|
+├── .gitignore          <- GitHub's Python specific .gitignore with custom additions
+├── LICENSE             <- License used for the project
+├── README.md           <- Top-level README for developers involved in this project
+└── environment.yml     <- conda environment file to reproduce the Python enviroment used for this project
+```
 
-This is our your new project will look like:
-
-    ├── .gitignore                <- GitHub's excellent Python .gitignore customized for this project
-    ├── LICENSE                   <- Your project's license.
-    ├── Pipfile                   <- The Pipfile for reproducing the analysis environment
-    ├── README.md                 <- The top-level README for developers using this project.
-    │
-    ├── data
-    │   ├── 0_raw                 <- The original, immutable data dump.
-    │   ├── 0_external            <- Data from third party sources.
-    │   ├── 1_interim             <- Intermediate data that has been transformed.
-    │   └── 2_final               <- The final, canonical data sets for modeling.
-    │
-    ├── docs                      <- GitHub pages website
-    │   ├── data_dictionaries     <- Data dictionaries
-    │   └── references            <- Papers, manuals, and all other explanatory materials.
-    │
-    ├── notebooks                 <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                                the creator's initials, and a short `_` delimited description, e.g.
-    │                                `01_cp_exploratory_data_analysis.ipynb`.
-    │
-    ├── output
-    │   ├── features              <- Fitted and serialized features
-    │   ├── models                <- Trained and serialized models, model predictions, or model summaries
-    │   └── reports               <- Generated analyses as HTML, PDF, LaTeX, etc.
-    │       └── figures           <- Generated graphics and figures to be used in reporting
-    │
-    ├── pipelines                 <- Pipelines and data workflows.
-    │   ├── Pipfile               <- The Pipfile for reproducing the pipelines environment
-    │   ├── pipelines.py          <- The CLI entry point for all the pipelines
-    │   ├── <repo_name>           <- Code for the various steps of the pipelines
-    │   │   ├──  __init__.py
-    │   │   ├── etl.py            <- Download, generate, and process data
-    │   │   ├── visualize.py      <- Create exploratory and results oriented visualizations
-    │   │   ├── features.py       <- Turn raw data into features for modeling
-    │   │   └── train.py          <- Train and evaluate models
-    │   └── tests
-    │       ├── fixtures          <- Where to put example inputs and outputs
-    │       │   ├── input.json    <- Test input data
-    │       │   └── output.json   <- Test output data
-    │       └── test_pipelines.py <- Integration tests for the HTTP API
-    │
-    └── serve                     <- HTTP API for serving predictions
-        ├── Dockerfile            <- Dockerfile for HTTP API
-        ├── Pipfile               <- The Pipfile for reproducing the serving environment
-        ├── app.py                <- The entry point of the HTTP API
-        └── tests
-            ├── fixtures          <- Where to put example inputs and outputs
-            │   ├── input.json    <- Test input data
-            │   └── output.json   <- Test output data
-            └── test_app.py       <- Integration tests for the HTTP API
-
-
-
+## Limitations
+* Post-generation hook is not yet working with conda
+* Tests have not been adapted to changes conducted in this fork
 
 [Cookiecutter]: https://github.com/audreyr/cookiecutter
-[Pipenv]: https://pipenv.pypa.io/en/latest/
-[Prefect]: https://docs.prefect.io/
+[conda]: https://docs.conda.io/en/latest/index.html
+[Git LFS]: https://git-lfs.github.com/
+[Metaflow]: https://metaflow.org/
 [Weights and Biases]: https://www.wandb.com/
-[MLFlow]: https://mlflow.org/
-[FastAPI]: https://fastapi.tiangolo.com/
-[asyncio]: https://docs.python.org/3/library/asyncio.html
-[ASGI]: https://asgi.readthedocs.io/en/latest/
-[uvicorn]: https://www.uvicorn.org/
-[Typer]: https://typer.tiangolo.com/
-[Pandas]: https://pandas.pydata.org/
+[pandas]: https://pandas.pydata.org/
 [numpy]: https://numpy.org/
 [scipy]: https://www.scipy.org/
+[scikit-learn]: https://scikit-learn.org/stable/index.html
 [seaborn]: https://seaborn.pydata.org/
-[jupyterlab]: https://jupyterlab.readthedocs.io/en/stable/
+[ipykernel]: https://ipython.readthedocs.io/en/stable/
 [black]: https://github.com/psf/black
 [isort]: https://github.com/timothycrosley/isort
-[autoflake]: https://github.com/myint/autoflake
 [pylint]: https://www.pylint.org/
 [Pytest]: https://docs.pytest.org/en/latest/
 [GitHub Pages]: https://pages.github.com/
-[Git LFS]: https://git-lfs.github.com/
+[miniconda]: https://docs.conda.io/en/latest/miniconda.html
