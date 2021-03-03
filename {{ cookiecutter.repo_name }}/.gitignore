@@ -129,10 +129,7 @@ dmypy.json
 .pyre/
 
 # Weights & Biases
-/wandb
-
-# Dask
-dask-worker-space
+wandb/
 
 # VSCode
 .vscode/
