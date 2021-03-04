@@ -11,10 +11,18 @@ if "{{ cookiecutter.license }}" == "Not open source":
 
 #
 if "{{ cookiecutter.setup_project }}" == "Yes - select this":
-    subprocess.call('conda create -y -n "{{ cookiecutter.repo_name }}"')
+    subprocess.call(["conda", "create", "-y", "-n", '"{{ cookiecutter.repo_name }}"'])
     subprocess.call(
-        'conda env update -n "{{ cookiecutter.repo_name }}" -f environment.yml'
+        [
+            "conda",
+            "env",
+            "update",
+            "-n",
+            '"{{ cookiecutter.repo_name }}"',
+            "-f",
+            "environment.yml",
+        ]
     )
-    subprocess.call("git init")
-    subprocess.call("git lfs install")
-    subprocess.call("pre-commit install")
+    subprocess.call(["git", "init"])
+    subprocess.call(["git", "lfs", "install"])
+    subprocess.call(["pre-commit", "install"])
