@@ -5,6 +5,7 @@ import subprocess
 from pathlib import Path
 
 PROJECT_DIRECTORY = Path.cwd()
+REPO_NAME = "{{ cookiecutter.repo_name }}"
 
 if "{{ cookiecutter.license }}" == "Not open source":
     (PROJECT_DIRECTORY / "LICENSE").unlink()
@@ -17,7 +18,7 @@ if "{{ cookiecutter.setup_project }}" == "Yes - select this":
             "conda",
             "create",
             "-n",
-            "{{ cookiecutter.repo_name }}",
+            REPO_NAME,
             "-f",
             "environment.yml",
         ]
