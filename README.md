@@ -10,7 +10,7 @@ orginally created by [Carmine Paolino](https://github.com/crmne) which is tailor
 * [Weights and Biases] to track experiments and log artifacts
 * Batteries included: [pandas], [numpy], [scipy], [scikit-learn], [seaborn], and [ipykernel]
 (required to work with [Jupyter Notebooks in VSCode](https://code.visualstudio.com/docs/python/jupyter-support)) already installed.
-* Consistent code quality: [black], [isort], and [pylint] already installed and enforced using [pre-commit] hooks
+* Consistent code quality: [black], [isort], and [pylint] already installed and enforced using [pre-commit] hook - even for Jupyter Notebooks via [nbQA]
 * [Pytest] to write test.
 * [GitHub Pages] to create a dedicated website for your project
 
@@ -39,10 +39,6 @@ cloud/on-premise version:
 
     wandb local
 
-*Optional*: Enable pre-commit hooks
-
-    pre-commit install
-
 *Optional*: Track your data, e.g. CSV files, with Git LFS
 
     git lfs track *.csv
@@ -65,12 +61,12 @@ manually, tools like [Metaflow] and [Weights and Biases] take care of these task
 |
 ├── notebooks           <- Jupyter notebooks
 |
-├── references          <- Documentation of raw/external data sources and all other explanatory materials
+├── references          <- Documentation of data sources and all other explanatory materials
 |
 ├── reports             <- Reports generated from analysis done in notebooks
 │   ├── figures         <- Figures used in reports
 |
-├── .gitignore          <- GitHub's Python specific .gitignore with additions for tools used in this project
+├── .gitignore          <- GitHub's Python specific .gitignore customized for tools used in this project
 ├── LICENSE             <- License used for the project
 ├── README.md           <- Top-level README for developers working with this project
 └── environment.yml     <- conda environment file to reproduce the Python enviroment used for this project
@@ -94,6 +90,7 @@ manually, tools like [Metaflow] and [Weights and Biases] take care of these task
 [isort]: https://github.com/timothycrosley/isort
 [pylint]: https://www.pylint.org/
 [pre-commit]: https://pre-commit.com/
+[nbQA]: https://github.com/nbQA-dev/nbQA
 [Pytest]: https://docs.pytest.org/en/latest/
 [GitHub Pages]: https://pages.github.com/
 [miniconda]: https://docs.conda.io/en/latest/miniconda.html
