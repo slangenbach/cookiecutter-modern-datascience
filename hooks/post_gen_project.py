@@ -11,5 +11,6 @@ if "{{ cookiecutter.license }}" == "Not open source":
 if "{{ cookiecutter.setup_project }}" == "Yes - select this":
     os.system("git init")
     os.system(
-        'conda create --name "{{ cookiecutter.repo_name }}" --file environment.yml'
+        'conda create -y -n "{{ cookiecutter.repo_name }}"',
+        'conda env update -n "{{ cookiecutter.repo_name }}" -f environment.yml',
     )
