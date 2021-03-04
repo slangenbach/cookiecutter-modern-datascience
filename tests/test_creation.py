@@ -5,29 +5,15 @@ from pathlib import Path
 import pytest
 from cookiecutter import main
 
-FILES = [".gitignore", "LICENSE", "Pipfile", "README.md"]
+FILES = [".gitignore", "LICENSE", "README.md", "environment.yml", "pyproject.toml"]
 FOLDERS = [
     Path("data"),
-    Path("data", "0_raw"),
-    Path("data", "0_external"),
-    Path("data", "1_interim"),
-    Path("data", "2_final"),
     Path("docs"),
-    Path("docs", "data_dictionaries"),
-    Path("docs", "references"),
+    Path("flows"),
     Path("notebooks"),
-    Path("output"),
-    Path("output", "features"),
-    Path("output", "models"),
-    Path("output", "reports"),
-    Path("output", "reports", "figures"),
-    Path("pipelines"),
-    Path("pipelines", "project_name"),
-    Path("pipelines", "tests"),
-    Path("pipelines", "tests", "fixtures"),
-    Path("serve"),
-    Path("serve", "tests"),
-    Path("serve", "tests", "fixtures"),
+    Path("references"),
+    Path("reports"),
+    Path("reports", "figures"),
 ]
 
 CCDS_ROOT = Path(__file__).parent.parent.resolve()
