@@ -1,14 +1,11 @@
-name: dev
+name: cookiecutter-dev
 channels:
   - defaults
   - conda-forge
 dependencies:
-  - ipykernel
-  - seaborn
-  - pandas
-  - numpy
-  - scikit-learn
-  - black
-  - scipy
-  - pytest
-  - isort
+  - "cookiecutter>=1.7.2"
+  - "pytest>=6.2.2"
+  - "black>=19.10b0"
+  - "pylint>=2.3.1"
+  - "isort>=5.7.0"
+  - "pre-commit>=2.10.1"
