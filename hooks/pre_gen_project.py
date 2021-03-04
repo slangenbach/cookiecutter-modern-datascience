@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+"""Script running before creation of project"""
 
 import re
 import sys
