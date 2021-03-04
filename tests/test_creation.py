@@ -5,7 +5,14 @@ from pathlib import Path
 import pytest
 from cookiecutter import main
 
-FILES = [".gitignore", "LICENSE", "README.md", "environment.yml", "pyproject.toml"]
+FILES = [
+    ".gitignore",
+    ".pre-commit-config.yaml",
+    "LICENSE",
+    "README.md",
+    "environment.yml",
+    "pyproject.toml",
+]
 FOLDERS = [
     Path("data"),
     Path("docs"),
