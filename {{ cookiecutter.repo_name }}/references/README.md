@@ -1,5 +1,5 @@
 # {{ cookiecutter.project_name }} - References
-Put documentation of raw/external data sources and all other explanatory materials here.
+Put documentation of raw/external data sources and all other explanatory materials here.  
 If you are dealing with a lot of sources, create one dictionary per source.
 
 ## Example
