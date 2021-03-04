@@ -16,10 +16,11 @@ if "{{ cookiecutter.setup_project }}" == "Yes - select this":
     subprocess.run(
         [
             "conda",
+            "env",
             "create",
-            "-n",
+            "--name",
             REPO_NAME,
-            "-f",
+            "--file",
             "environment.yml",
         ]
     )
