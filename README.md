@@ -10,14 +10,14 @@ orginally created by [Carmine Paolino](https://github.com/crmne) which is tailor
 * [Weights and Biases] to track experiments and log artifacts
 * Batteries included: [pandas], [numpy], [scipy], [scikit-learn], [seaborn], and [ipykernel]
 (required to work with [Jupyter Notebooks in VSCode](https://code.visualstudio.com/docs/python/jupyter-support)) already installed.
-* Consistent code quality: [black], [isort], and [pylint] already installed and enforced using [pre-commit] hook - even for Jupyter Notebooks via [nbQA]
+* Consistent code quality: [black], [isort], and [pylint] already installed and enforced using [pre-commit] hook (even for Jupyter Notebooks thanks to [nbQA])
 * [Pytest] to write test.
 * [GitHub Pages] to create a dedicated website for your project
 
 ## Prerequisites
 * [Cookiecutter] >= 1.7.2
 * [miniconda] >= 4.9.2
-* *Optional*: [VSCode](https://code.visualstudio.com/) >= 1.53.2
+* *Optional*: Docker to run [Weights and Biases] locally
 
 ## Usage
 Install the latest version of cookiecutter:
