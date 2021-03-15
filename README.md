@@ -7,7 +7,7 @@ originally created by [Carmine Paolino](https://github.com/crmne) which is tailo
 * [Conda] to manage packages and environments in a platform agnostic way
 * [Git LFS] to manage large files with git
 * [Metaflow] to create elegant data pipelines and workflows
-* [MLfow] to track experiments and log artifacts
+* [MLflow] to track experiments and log artifacts
 * Batteries included: [pandas], [numpy], [scipy], [scikit-learn], [seaborn], and [ipykernel]
 (required to work with [Jupyter Notebooks in VSCode](https://code.visualstudio.com/docs/python/jupyter-support)) already installed.
 * Consistent code quality: [black], [isort], and [pylint] already installed and enforced using [pre-commit] hook (even for Jupyter Notebooks thanks to [nbQA])
