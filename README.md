@@ -46,25 +46,26 @@ Start working:
     code .  # Replace code with your favourite editor
 
 ## Directory structure
-The directory structure contains only essential files and folders. Instead of using
-dedicated folders and subfolders to store raw and processed data or model artifacts
-manually, tools like [Metaflow] and [MLflow] take care of these tasks for us.
+The directory structure contains only essential files and folders.
+Instead of using lots of nested subfolders, tools like [Metaflow] and [MLflow] take care of these tasks for us.
 
 ```
+├── artifacts           <- Serialized features and models
+|
 ├── data                <- Original, immutable data dumps from raw/external data sources
 |
 ├── docs                <- Github pages website
 |
 ├── flows               <- Data pipelines expressed as Metaflow flows
 |
-├── notebooks           <- Jupyter notebooks
+├── notebooks           <- Jupyter/R notebooks
 |
 ├── references          <- Documentation of data sources and all other explanatory materials
 |
 ├── reports             <- Reports generated from analysis done in notebooks
 │   ├── figures         <- Figures used in reports
 |
-├── .gitignore          <- GitHub's Python specific .gitignore customized for tools used in this project
+├── .gitignore          <- GitHub's Python/R specific .gitignore customized for tools used in this project
 ├── LICENSE             <- License used for the project
 ├── README.md           <- Top-level README for developers working with this project
 └── environment.yml     <- conda environment file to reproduce the Python enviroment used for this project
