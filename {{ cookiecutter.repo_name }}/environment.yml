@@ -18,3 +18,4 @@ dependencies:
   - "ipykernel>=5.3.4"
   - "metaflow>=2.2.7"
   - "mflow>=1.14"
+  - "pyarrow>=3.0.0"
