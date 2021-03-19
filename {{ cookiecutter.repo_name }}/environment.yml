@@ -17,5 +17,5 @@ dependencies:
   - "seaborn>=0.11.1"
   - "ipykernel>=5.3.4"
   - "metaflow>=2.2.8"
-  - "mflow>=1.14.1"
+  - "mlflow>=1.14.1"
   - "pyarrow>=3.0.0"
