@@ -158,6 +158,7 @@ wandb/
 
 # RStudio files
 .Rproj.user/
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -182,6 +183,9 @@ docs/
 
 # translation temp files
 po/*~
+
+# renv
+renv/
 
 # HTML files generated from R notebooks
 notebooks/*.html
