@@ -183,4 +183,7 @@ docs/
 # translation temp files
 po/*~
 
+# HTML files generated from R notebooks
+notebooks/*.html
+
 {% endif %}
