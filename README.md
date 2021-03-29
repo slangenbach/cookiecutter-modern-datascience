@@ -4,7 +4,7 @@ This is a fork of the [modern data science template](https://github.com/crmne/co
 originally created by [Carmine Paolino](https://github.com/crmne) which is tailored to my workflow.
 
 ## Features
-* [Conda] to manage packages and environments in a platform agnostic way
+* [Conda] and [renv] to manage Python, R and other packages/environments in a platform agnostic way
 * [Git LFS] to manage large files with git
 * [Metaflow] to create elegant data pipelines and workflows
 * [MLflow] to track experiments and log artifacts
@@ -16,7 +16,8 @@ originally created by [Carmine Paolino](https://github.com/crmne) which is tailo
 
 ## Prerequisites
 * [Cookiecutter] >= 1.7.2
-* [miniconda] >= 4.9.2
+* [miniconda] >= 4.9.2 (for setting up Python environments)
+* [R] >= 4.0.4 (for setting up R environments)
 
 ## Usage
 Install the latest version of cookiecutter:
@@ -26,7 +27,6 @@ Install the latest version of cookiecutter:
 Generate the project:
 
     cookiecutter gh:sl/cookiecutter-modern-datascience
-
 
 Activate the conda environment:
 
@@ -39,7 +39,7 @@ Activate the conda environment:
 
 *Optional*: Track your data, e.g. CSV files, with Git LFS
 
-    git lfs track *.csv
+    git lfs track "*.csv"
 
 Start working:
 
@@ -51,24 +51,29 @@ Instead of using lots of nested subfolders, tools like [Metaflow] and [MLflow] t
 
 ```
 ├── artifacts           <- Serialized features and models
-|
-├── data                <- Original, immutable data dumps from raw/external data sources
-|
+│   
+├── data                <- Data used in this project
+│   ├── external        <- All data from external sources
+│   ├── raw             <- Original, immutable data dumps from raw/external data sources
+│   ├── interim         <- Cleaned data saved in *parquet* format
+│   ├── processed       <- Preprocessed data used for model building
+│ 
 ├── docs                <- Github pages website
-|
+│
 ├── flows               <- Data pipelines expressed as Metaflow flows
-|
+│ 
 ├── notebooks           <- Jupyter/R notebooks
-|
+│ 
 ├── references          <- Documentation of data sources and all other explanatory materials
-|
+│ 
 ├── reports             <- Reports generated from analysis done in notebooks
 │   ├── figures         <- Figures used in reports
-|
+│ 
 ├── .gitignore          <- GitHub's Python/R specific .gitignore customized for tools used in this project
 ├── LICENSE             <- License used for the project
 ├── README.md           <- Top-level README for developers working with this project
-└── environment.yml     <- conda environment file to reproduce the Python enviroment used for this project
+├── environment.yml     <- conda environment file to reproduce the Python enviroment used for this project
+└── renv.lock           <- renv file to reproduce the R enviroment used for this project
 ```
 
 ## References
@@ -93,3 +98,5 @@ Instead of using lots of nested subfolders, tools like [Metaflow] and [MLflow] t
 [Pytest]: https://docs.pytest.org/en/latest/
 [GitHub Pages]: https://pages.github.com/
 [miniconda]: https://docs.conda.io/en/latest/miniconda.html
+[R]: https://www.r-project.org/
+[renv]: https://rstudio.github.io/renv/index.html
