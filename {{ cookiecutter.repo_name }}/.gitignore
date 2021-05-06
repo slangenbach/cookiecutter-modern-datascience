@@ -190,7 +190,7 @@ renv/
 # HTML files generated from R notebooks
 notebooks/*.html
 
-{% if cookiecutter.setup_lang == 'all' %}
+{% elif cookiecutter.setup_lang == 'all' %}
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
